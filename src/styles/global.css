@@ -1,0 +1,181 @@
+/* ===============================
+   RESET & BASE
+================================ */
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+/* ===============================
+   COMMON UI ELEMENTS
+================================ */
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===============================
+   VAULT LAYOUT
+================================ */
+
+.vault-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Header */
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f8f9fa;
+}
+
+/* Body */
+.vault-body {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+  width: 100%;
+}
+
+/* Sidebar */
+.vault-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+/* Main Content */
+.vault-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===============================
+   SECRET GRID & CARDS
+================================ */
+
+/* 🔥 IMPORTANT FIX IS HERE */
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.vault-card {
+  min-width: 0;
+}
+
+/* Prevent text overflow */
+.secret-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.secret-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===============================
+   ADD SECRET CARD
+================================ */
+
+.add-secret-wrapper {
+  width: 100%;
+}
+
+.add-secret-card {
+  height: auto;
+  align-self: flex-start;
+}
+
+/* ===============================
+   TOAST (TOP RIGHT)
+================================ */
+
+.toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+
+.toast-box {
+  background: #212529;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ===============================
+   RESPONSIVE FIXES
+================================ */
+
+@media (max-width: 992px) {
+  .vault-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vault-sidebar,
+  .vault-content {
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 576px) {
+  .vault-header {
+    padding: 12px;
+  }
+
+  .vault-body {
+    padding: 12px;
+  }
+}

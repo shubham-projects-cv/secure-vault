@@ -1,16 +1,59 @@
-# React + Vite
+# Secure Vault Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Run the Project
 
-Currently, two official plugins are available:
+1. Ensure Node.js and npm are installed on your system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone <repository-url>
+   cd secure-vault
+   ````
 
-## React Compiler
+3. Install dependencies:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+4. Start the development server:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm run dev
+   ```
+
+5. Open the application in your browser:
+
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## How to Use the Application
+
+1. The application opens in a **locked state**.
+
+2. Enter a **master password** to unlock the vault
+   (this password is never stored).
+
+3. Add a secret using the **Add Secret** form:
+
+   * Name (required)
+   * Username (required)
+   * Password (required)
+   * Notes (optional)
+
+4. All secrets are **encrypted before being stored** in localStorage.
+
+5. Refreshing the page **automatically locks** the vault.
+
+6. Unlock again using the same master password to access saved secrets.
+
+7. Use the **Copy** button to copy usernames or passwords
+   (clipboard auto-clears after a short time).
+
+8. Use the **Search** field to filter secrets.
+
+9. Delete secrets using the **Delete** button
+   (confirmation required).
